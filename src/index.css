@@ -17,6 +17,10 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(0, 81, 255, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(0, 242, 255, 0.05) 0%, transparent 25%);
+  background-attachment: fixed;
 }
 
 h1,
@@ -25,10 +29,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-display);
   font-weight: 700;
-  color: var(--color-text);
-  line-height: 1.2;
+  color: var(--color-accent);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--color-text-muted);
+  font-weight: 400;
 }
 
 a {
@@ -48,24 +58,24 @@ img {
 
 /* Selection Color */
 ::selection {
-  background: var(--color-accent);
-  color: var(--color-primary);
+  background: rgba(0, 81, 255, 0.3);
+  color: #fff;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-primary-dark);
+  background: var(--color-background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary-light);
+  background: var(--color-primary-lighter);
   border-radius: var(--radius-full);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent);
+  background: var(--color-secondary);
 }
