@@ -7,7 +7,7 @@ import './Navbar.css';
 const Navbar = () => {
     const [click, setClick] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState('dark');
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
@@ -27,7 +27,7 @@ const Navbar = () => {
 
     // Theme Toggle Logic
     useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') || 'light';
+        const savedTheme = localStorage.getItem('theme') || 'dark';
         setTheme(savedTheme);
         document.documentElement.setAttribute('data-theme', savedTheme);
     }, []);

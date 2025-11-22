@@ -12,7 +12,7 @@
 
 .section-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
 .section-subtitle {
@@ -20,185 +20,209 @@
     font-size: 0.85rem;
     color: var(--color-primary);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 1rem;
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
     font-weight: 600;
+    opacity: 0.9;
 }
 
 .section-header h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
     font-weight: 700;
     color: var(--color-accent);
-    letter-spacing: -0.5px;
+    letter-spacing: -1px;
 }
 
 .section-header p {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     max-width: 700px;
     margin: 0 auto;
     color: var(--color-text-muted);
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 /* Hero Section */
 .hero-section {
-    height: 90vh;
-    min-height: 600px;
+    height: 100vh;
+    min-height: 700px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    background: var(--gradient-hero);
-    padding-top: 80px;
+    background: var(--color-background);
+    overflow: hidden;
 }
 
+/* Premium Background Effects */
 .hero-bg-pattern {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
-    background-size: 40px 40px;
-    opacity: 0.5;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
     z-index: 0;
+}
+
+.hero-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vh;
+    background: var(--gradient-glow);
+    filter: blur(100px);
+    z-index: 0;
+    opacity: 0.6;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
     text-align: center;
-    max-width: 900px;
+    max-width: 1000px;
     padding: 0 20px;
 }
 
 .hero-badge {
     display: inline-block;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--color-primary);
-    border: 1px solid var(--color-border);
-    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
     border-radius: 100px;
-    background: var(--color-surface);
-    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    margin-bottom: 2.5rem;
+    backdrop-filter: blur(10px);
 }
 
 .hero-content h1 {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    margin-bottom: 1.5rem;
-    color: var(--color-text);
-    line-height: 1.1;
-    letter-spacing: -1px;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
+    font-size: clamp(3.5rem, 6vw, 6rem);
+    margin-bottom: 2rem;
+    letter-spacing: -2px;
     color: var(--color-text-muted);
-    margin-bottom: 2.5rem;
-    max-width: 650px;
+    margin-bottom: 3.5rem;
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .hero-btns {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: center;
 }
 
 /* Reality Gap Section */
 .reality-section {
-    padding: 6rem 0;
+    padding: 8rem 0;
     background: var(--color-background);
+    position: relative;
 }
 
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .stat-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    padding: 2.5rem 2rem;
+    padding: 3rem 2rem;
     text-align: center;
     border-radius: var(--radius-lg);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-10px);
     border-color: var(--color-primary);
+    box-shadow: var(--shadow-lg);
 }
 
 .stat-card h3 {
-    font-size: 3rem;
+    font-size: 4rem;
     color: var(--color-primary);
-    margin-bottom: 0.5rem;
-    font-weight: 700;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    line-height: 1;
 }
 
 .stat-card p {
     color: var(--color-text-muted);
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .reality-message {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 2rem;
     background: rgba(255, 50, 50, 0.05);
-    border: 1px solid rgba(255, 50, 50, 0.1);
-    padding: 1.5rem 2rem;
+    border: 1px solid rgba(255, 50, 50, 0.15);
+    padding: 2rem 3rem;
     border-radius: var(--radius-md);
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .warning-icon {
     color: #ff4444;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .reality-message p {
     color: var(--color-text);
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin: 0;
+    line-height: 1.6;
 }
 
 /* Approach Section */
 .approach-section {
-    padding: 6rem 0;
+    padding: 8rem 0;
     background: var(--color-surface);
 }
 
 .approach-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .approach-item {
     text-align: left;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    transition: background 0.3s ease;
+}
+
+.approach-item:hover {
+    background: var(--color-background);
 }
 
 .approach-icon {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--color-primary);
     margin-bottom: 1.5rem;
-    background: rgba(0, 81, 255, 0.05);
-    width: 56px;
-    height: 56px;
+    background: rgba(17, 86, 235, 0.1);
+    width: 70px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -206,83 +230,84 @@
 }
 
 .approach-item h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--color-accent);
 }
 
 .approach-item p {
     color: var(--color-text-muted);
-    line-height: 1.6;
-    font-size: 0.95rem;
+    line-height: 1.7;
 }
 
 /* Framework Section */
 .framework-section {
-    padding: 6rem 0;
+    padding: 8rem 0;
     background: var(--color-background);
 }
 
 .framework-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .framework-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    padding: 2rem;
+    padding: 3rem 2.5rem;
     border-radius: var(--radius-lg);
     position: relative;
     transition: all 0.3s ease;
+    overflow: hidden;
 }
 
 .framework-card:hover {
-    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
     border-color: var(--color-primary);
-    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
 }
 
 .step-number {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--color-border-hover);
-    opacity: 0.5;
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--color-text);
+    opacity: 0.03;
 }
 
 .step-icon {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     color: var(--color-primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .framework-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
     color: var(--color-accent);
 }
 
 .framework-card p {
     color: var(--color-text-muted);
-    font-size: 0.9rem;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 /* Case Studies Section */
 .case-studies-section {
-    padding: 6rem 0;
+    padding: 8rem 0;
     background: var(--color-surface);
 }
 
 .case-study-card {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
     align-items: center;
-    margin-bottom: 5rem;
+    margin-bottom: 8rem;
 }
 
 .case-study-card.reverse {
@@ -294,89 +319,94 @@
 }
 
 .case-study-content h3 {
-    font-size: 2rem;
+    font-size: 2.8rem;
     margin-bottom: 0.5rem;
     color: var(--color-accent);
 }
 
 .case-study-role {
     color: var(--color-primary);
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
 }
 
 .case-study-content p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
     color: var(--color-text-muted);
+    line-height: 1.7;
 }
 
 .case-study-tags {
     display: flex;
-    gap: 0.8rem;
+    gap: 1rem;
     flex-wrap: wrap;
 }
 
 .case-study-tags span {
     background: var(--color-background);
-    padding: 0.4rem 0.8rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 100px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--color-text);
     border: 1px solid var(--color-border);
+    font-weight: 500;
 }
 
 .case-study-visual {
     background: var(--color-border);
-    height: 350px;
+    height: 450px;
     border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    box-shadow: var(--shadow-lg);
 }
 
 .jbs-visual {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
 }
 
 .witfy-visual {
-    background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+    background: linear-gradient(135deg, #0d13a9 0%, #1156eb 100%);
 }
 
 .visual-placeholder {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 1.5rem;
-    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
 /* Contact Section */
 .contact-section {
-    padding: 6rem 0;
+    padding: 8rem 0;
     background: var(--color-background);
 }
 
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 5rem;
     align-items: start;
 }
 
 .contact-info h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1.5rem;
     color: var(--color-accent);
 }
 
 .contact-info p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--color-text-muted);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    line-height: 1.7;
 }
 
 .contact-benefits {
@@ -386,19 +416,21 @@
 .contact-benefits li {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
     color: var(--color-text);
     font-weight: 500;
+    font-size: 1.1rem;
 }
 
 .contact-benefits li svg {
     color: var(--color-primary);
+    font-size: 1.3rem;
 }
 
 .contact-form-container {
     background: var(--color-surface);
-    padding: 2.5rem;
+    padding: 3rem;
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border);
     box-shadow: var(--shadow-lg);
@@ -410,8 +442,8 @@
 
 .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: var(--color-text);
 }
@@ -419,27 +451,29 @@
 .form-group input,
 .form-group select {
     width: 100%;
-    padding: 0.8rem;
+    padding: 1rem;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
     background: var(--color-background);
     color: var(--color-text);
     font-family: var(--font-family-sans);
-    font-size: 0.95rem;
-    transition: border-color 0.2s ease;
+    font-size: 1rem;
+    transition: all 0.2s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
     border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(13, 19, 169, 0.2);
 }
 
 /* About Section */
 .about-section {
-    padding: 5rem 0;
+    padding: 6rem 0;
     background: var(--color-surface);
     text-align: center;
+    border-top: 1px solid var(--color-border);
 }
 
 .about-content {
@@ -448,13 +482,14 @@
 }
 
 .about-content h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .about-content p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
 }
 
 @media screen and (max-width: 960px) {
@@ -468,7 +503,7 @@
 
     .case-study-card {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
     }
 
     .case-study-card.reverse {
@@ -480,6 +515,6 @@
     }
 
     .hero-content h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 }

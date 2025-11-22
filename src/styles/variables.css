@@ -49,11 +49,46 @@
   --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Light Mode (Default) */
+/* Default Theme (Dark / Premium Charcoal) */
 :root {
+  --color-background: var(--color-brand-charcoal);
+  /* Main Brand Charcoal */
+  --color-surface: var(--color-charcoal-90);
+  --color-surface-hover: var(--color-charcoal-80);
+
+  --color-text: #ffffff;
+  --color-text-muted: var(--color-charcoal-30);
+  /* Light Charcoal for muted text */
+  --color-text-light: var(--color-charcoal-40);
+
+  --color-border: var(--color-charcoal-80);
+  --color-border-hover: var(--color-charcoal-70);
+
+  --color-primary: var(--color-accent-blue-2);
+  /* Brighter blue for contrast on dark */
+  --color-primary-hover: var(--color-accent-blue-1);
+
+  --color-accent: #ffffff;
+
+  --glass-bg: rgba(40, 40, 59, 0.85);
+  /* Charcoal with opacity */
+  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.4);
+
+  /* Premium Gradients */
+  --gradient-hero: radial-gradient(circle at top right, var(--color-charcoal-80) 0%, var(--color-brand-charcoal) 60%);
+  --gradient-blue: linear-gradient(135deg, var(--color-accent-blue-2) 0%, var(--color-accent-cyan) 100%);
+  --gradient-glow: radial-gradient(circle at center, rgba(17, 86, 235, 0.15), transparent 70%);
+}
+
+/* Light Mode (Optional / Secondary) */
+[data-theme='light'] {
   --color-background: #ffffff;
   --color-surface: var(--color-charcoal-05);
-  /* Very light grey */
   --color-surface-hover: var(--color-charcoal-10);
 
   --color-text: var(--color-brand-charcoal);
@@ -78,36 +113,5 @@
 
   --gradient-hero: linear-gradient(135deg, #ffffff 0%, var(--color-charcoal-05) 100%);
   --gradient-blue: linear-gradient(135deg, var(--color-brand-blue) 0%, var(--color-accent-blue-1) 100%);
-}
-
-/* Dark Mode */
-[data-theme='dark'] {
-  --color-background: var(--color-brand-charcoal);
-  /* Main Brand Charcoal */
-  --color-surface: var(--color-charcoal-90);
-  --color-surface-hover: var(--color-charcoal-80);
-
-  --color-text: #ffffff;
-  --color-text-muted: var(--color-charcoal-20);
-  --color-text-light: var(--color-charcoal-40);
-
-  --color-border: var(--color-charcoal-80);
-  --color-border-hover: var(--color-charcoal-70);
-
-  --color-primary: var(--color-accent-blue-2);
-  /* Brighter blue for dark mode */
-  --color-primary-hover: var(--color-accent-blue-1);
-
-  --color-accent: #ffffff;
-
-  --glass-bg: rgba(40, 40, 59, 0.9);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
-  --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.4);
-
-  --gradient-hero: linear-gradient(135deg, var(--color-brand-charcoal) 0%, var(--color-charcoal-90) 100%);
-  --gradient-blue: linear-gradient(135deg, var(--color-accent-blue-2) 0%, var(--color-accent-cyan) 100%);
+  --gradient-glow: radial-gradient(circle at center, rgba(13, 19, 169, 0.05), transparent 70%);
 }
