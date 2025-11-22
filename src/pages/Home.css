@@ -17,23 +17,25 @@
 
 .section-subtitle {
     display: inline-block;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--color-secondary-light);
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 1rem;
     font-weight: 600;
+    opacity: 0.9;
 }
 
 .section-header h2 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     margin-bottom: 1.5rem;
     font-weight: 700;
     color: var(--color-accent);
+    letter-spacing: -0.5px;
 }
 
 .section-header p {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     max-width: 700px;
     margin: 0 auto;
     color: var(--color-text-muted);
@@ -77,7 +79,7 @@
     transform: translate(-50%, -50%);
     width: 60vw;
     height: 60vh;
-    background: radial-gradient(circle at center, rgba(0, 81, 255, 0.15), transparent 70%);
+    background: radial-gradient(circle at center, rgba(0, 81, 255, 0.12), transparent 70%);
     filter: blur(80px);
     z-index: 0;
     animation: pulse-glow 8s infinite alternate;
@@ -180,8 +182,8 @@
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    background: rgba(255, 50, 50, 0.1);
-    border: 1px solid rgba(255, 50, 50, 0.2);
+    background: rgba(255, 50, 50, 0.05);
+    border: 1px solid rgba(255, 50, 50, 0.15);
     padding: 1.5rem 3rem;
     border-radius: var(--radius-md);
     max-width: 800px;
@@ -194,7 +196,7 @@
 }
 
 .reality-message p {
-    color: #ffcccc;
+    color: #e0e0e0;
     font-size: 1.1rem;
     margin: 0;
 }
@@ -219,7 +221,7 @@
     font-size: 2rem;
     color: var(--color-secondary-light);
     margin-bottom: 1.5rem;
-    background: rgba(0, 81, 255, 0.1);
+    background: rgba(0, 81, 255, 0.08);
     width: 60px;
     height: 60px;
     display: flex;
@@ -237,6 +239,129 @@
 .approach-item p {
     color: var(--color-text-muted);
     line-height: 1.6;
+}
+
+/* Framework Section */
+.framework-section {
+    padding: 8rem 0;
+    background: var(--color-background);
+}
+
+.framework-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.framework-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.framework-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--color-secondary);
+    transform: translateY(-5px);
+}
+
+.step-number {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.03);
+}
+
+.step-icon {
+    font-size: 2rem;
+    color: var(--color-secondary-light);
+    margin-bottom: 1.5rem;
+}
+
+.framework-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+}
+
+.framework-card p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+/* Pricing Section */
+.pricing-section {
+    padding: 8rem 0;
+    background: #121212;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+.pricing-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3rem 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.pricing-card.highlight {
+    background: rgba(0, 81, 255, 0.05);
+    border-color: var(--color-secondary);
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.pricing-card h3 {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 2rem;
+}
+
+.period {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+}
+
+.features-list {
+    text-align: left;
+    margin-bottom: 2.5rem;
+    list-style: none;
+}
+
+.features-list li {
+    margin-bottom: 1rem;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.feature-icon {
+    color: var(--color-secondary-light);
+    font-size: 1rem;
+    flex-shrink: 0;
 }
 
 /* Case Studies Section */
@@ -366,8 +491,14 @@
 @media screen and (max-width: 960px) {
 
     .stats-grid,
-    .approach-grid {
+    .approach-grid,
+    .framework-grid,
+    .pricing-grid {
         grid-template-columns: 1fr;
+    }
+
+    .pricing-card.highlight {
+        transform: none;
     }
 
     .case-study-card {

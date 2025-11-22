@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaRocket, FaBrain, FaChartLine, FaArrowRight, FaExclamationTriangle, FaLightbulb, FaHandshake, FaCheckCircle } from 'react-icons/fa';
+import { FaRocket, FaBrain, FaChartLine, FaArrowRight, FaExclamationTriangle, FaLightbulb, FaHandshake, FaCheckCircle, FaCogs, FaSearch, FaMapMarkedAlt, FaLayerGroup, FaRoute } from 'react-icons/fa';
 import Button from '../components/Button';
 import './Home.css';
 
@@ -19,6 +19,54 @@ const Home = () => {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
     };
+
+    const frameworkSteps = [
+        { id: 1, title: "Understanding Challenges", icon: <FaSearch />, desc: "Identifying key business pain points and setting goals." },
+        { id: 2, title: "Process Mapping", icon: <FaMapMarkedAlt />, desc: "Mapping workflows to pinpoint where AI creates value." },
+        { id: 3, title: "Tool Selection", icon: <FaLayerGroup />, desc: "Selecting pre-vetted AI solutions that fit your needs." },
+        { id: 4, title: "Roadmap & ROI", icon: <FaChartLine />, desc: "Developing a structured plan and evaluating financial impact." },
+        { id: 5, title: "Implementation", icon: <FaRocket />, desc: "Integrating AI into operations and training staff." },
+        { id: 6, title: "Continuous Optimisation", icon: <FaCogs />, desc: "Improving systems and addressing new challenges." }
+    ];
+
+    const packages = [
+        {
+            name: "Essential AI Advisory",
+            price: "£2.5K",
+            period: "/month",
+            features: [
+                "AI Strategy Sessions (4 hrs/mo)",
+                "Quarterly Process Mapping",
+                "Curated AI Stack Access",
+                "Remote Guidance (48h response)"
+            ],
+            highlight: false
+        },
+        {
+            name: "Advanced AI Strategy",
+            price: "£5K",
+            period: "/month",
+            features: [
+                "AI Strategy Sessions (10 hrs/mo)",
+                "Monthly Process Mapping",
+                "Custom AI Demos with AWS",
+                "Priority Advisory (24h response)"
+            ],
+            highlight: true
+        },
+        {
+            name: "Enterprise Transformation",
+            price: "£12K",
+            period: "/month",
+            features: [
+                "AI Strategy Sessions (25 hrs/mo)",
+                "Continuous Process Optimisation",
+                "Full Organisational Integration",
+                "24/7 Priority Support Team"
+            ],
+            highlight: false
+        }
+    ];
 
     return (
         <div className="home-container">
@@ -64,32 +112,15 @@ const Home = () => {
                     </div>
 
                     <div className="stats-grid">
-                        <motion.div
-                            className="stat-card"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                        >
+                        <motion.div className="stat-card" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                             <h3>5,800</h3>
                             <p>AI Companies active in the UK</p>
                         </motion.div>
-                        <motion.div
-                            className="stat-card"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 }}
-                        >
+                        <motion.div className="stat-card" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
                             <h3>500+</h3>
                             <p>Consulting Firms claiming expertise</p>
                         </motion.div>
-                        <motion.div
-                            className="stat-card"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                        >
+                        <motion.div className="stat-card" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
                             <h3>1000s</h3>
                             <p>Apps & Tools promising transformation</p>
                         </motion.div>
@@ -131,6 +162,70 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* 6-Step Framework Section */}
+            <section className="framework-section">
+                <div className="section-container">
+                    <div className="section-header">
+                        <span className="section-subtitle">Our Methodology</span>
+                        <h2>The LBL AI Adoption Framework</h2>
+                        <p>A clear, structured approach to AI integration for businesses.</p>
+                    </div>
+
+                    <div className="framework-grid">
+                        {frameworkSteps.map((step) => (
+                            <motion.div
+                                key={step.id}
+                                className="framework-card"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: step.id * 0.1 }}
+                            >
+                                <div className="step-number">{step.id}</div>
+                                <div className="step-icon">{step.icon}</div>
+                                <h3>{step.title}</h3>
+                                <p>{step.desc}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Subscription Packages Section */}
+            <section className="pricing-section">
+                <div className="section-container">
+                    <div className="section-header">
+                        <span className="section-subtitle">Engagement Models</span>
+                        <h2>Subscription Packages</h2>
+                        <p>Simple, transparent pricing. No hiring headaches.</p>
+                    </div>
+
+                    <div className="pricing-grid">
+                        {packages.map((pkg, index) => (
+                            <motion.div
+                                key={index}
+                                className={`pricing-card ${pkg.highlight ? 'highlight' : ''}`}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                            >
+                                <h3>{pkg.name}</h3>
+                                <div className="price">
+                                    {pkg.price}<span className="period">{pkg.period}</span>
+                                </div>
+                                <ul className="features-list">
+                                    {pkg.features.map((feature, idx) => (
+                                        <li key={idx}><FaCheckCircle className="feature-icon" /> {feature}</li>
+                                    ))}
+                                </ul>
+                                <Button variant={pkg.highlight ? 'primary' : 'outline'}>Get Started</Button>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Case Studies Section */}
             <section className="case-studies-section">
                 <div className="section-container">
@@ -151,7 +246,6 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="case-study-visual jbs-visual">
-                            {/* Placeholder for JBS visual */}
                             <div className="visual-placeholder">JBS Case Study</div>
                         </div>
                     </div>
@@ -168,7 +262,6 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="case-study-visual witfy-visual">
-                            {/* Placeholder for Witfy visual */}
                             <div className="visual-placeholder">Witfy Platform</div>
                         </div>
                     </div>

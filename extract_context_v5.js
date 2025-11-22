@@ -3,10 +3,8 @@ const pdfExtract = new PDFExtract();
 const options = {}; /* see below */
 
 const files = [
-    'Branding__Social_Media_Guidelines_for_GenAI_Content_Creation.pdf',
-    'LBL_Manifesto.pdf',
-    'LBL_service_offering.pdf',
-    'Apresentação - Empowering Growth.pdf'
+    'LBL_AI_adoption_framework.pdf',
+    'Making_AI_simple_for_your_business.pdf'
 ];
 
 async function readPdf(file) {
