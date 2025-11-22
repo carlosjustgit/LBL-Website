@@ -26,23 +26,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 2rem;
-}
-
-.navbar-logo {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    text-align: center;
     gap: 2rem;
     margin-right: 2rem;
 }

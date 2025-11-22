@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaMoon, FaSun } from 'react-icons/fa';
 import Button from './Button';
+import logo from '../assets/logo.png';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -43,7 +44,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="navbar-container">
                 <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-                    <span style={{ fontWeight: 800, fontSize: '1.5rem', letterSpacing: '-1px', color: 'var(--color-accent)' }}>LBL</span>
+                    <img src={logo} alt="LBL Logo" className="nav-logo-img" />
                 </Link>
 
                 <div className="menu-icon" onClick={handleClick}>
