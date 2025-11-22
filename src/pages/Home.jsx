@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaRocket, FaBrain, FaChartLine, FaArrowRight, FaExclamationTriangle, FaLightbulb, FaHandshake, FaCheckCircle, FaCogs, FaSearch, FaMapMarkedAlt, FaLayerGroup, FaRoute } from 'react-icons/fa';
+import { FaRocket, FaChartLine, FaArrowRight, FaExclamationTriangle, FaLightbulb, FaHandshake, FaCheckCircle, FaCogs, FaSearch, FaMapMarkedAlt, FaLayerGroup } from 'react-icons/fa';
 import Button from '../components/Button';
 import './Home.css';
 
@@ -29,51 +29,11 @@ const Home = () => {
         { id: 6, title: "Continuous Optimisation", icon: <FaCogs />, desc: "Improving systems and addressing new challenges." }
     ];
 
-    const packages = [
-        {
-            name: "Essential AI Advisory",
-            price: "£2.5K",
-            period: "/month",
-            features: [
-                "AI Strategy Sessions (4 hrs/mo)",
-                "Quarterly Process Mapping",
-                "Curated AI Stack Access",
-                "Remote Guidance (48h response)"
-            ],
-            highlight: false
-        },
-        {
-            name: "Advanced AI Strategy",
-            price: "£5K",
-            period: "/month",
-            features: [
-                "AI Strategy Sessions (10 hrs/mo)",
-                "Monthly Process Mapping",
-                "Custom AI Demos with AWS",
-                "Priority Advisory (24h response)"
-            ],
-            highlight: true
-        },
-        {
-            name: "Enterprise Transformation",
-            price: "£12K",
-            period: "/month",
-            features: [
-                "AI Strategy Sessions (25 hrs/mo)",
-                "Continuous Process Optimisation",
-                "Full Organisational Integration",
-                "24/7 Priority Support Team"
-            ],
-            highlight: false
-        }
-    ];
-
     return (
         <div className="home-container">
             {/* Hero Section */}
             <section className="hero-section">
-                <div className="hero-grid-overlay"></div>
-                <div className="hero-glow"></div>
+                <div className="hero-bg-pattern"></div>
 
                 <motion.div
                     className="hero-content"
@@ -191,41 +151,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Subscription Packages Section */}
-            <section className="pricing-section">
-                <div className="section-container">
-                    <div className="section-header">
-                        <span className="section-subtitle">Engagement Models</span>
-                        <h2>Subscription Packages</h2>
-                        <p>Simple, transparent pricing. No hiring headaches.</p>
-                    </div>
-
-                    <div className="pricing-grid">
-                        {packages.map((pkg, index) => (
-                            <motion.div
-                                key={index}
-                                className={`pricing-card ${pkg.highlight ? 'highlight' : ''}`}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                            >
-                                <h3>{pkg.name}</h3>
-                                <div className="price">
-                                    {pkg.price}<span className="period">{pkg.period}</span>
-                                </div>
-                                <ul className="features-list">
-                                    {pkg.features.map((feature, idx) => (
-                                        <li key={idx}><FaCheckCircle className="feature-icon" /> {feature}</li>
-                                    ))}
-                                </ul>
-                                <Button variant={pkg.highlight ? 'primary' : 'outline'}>Get Started</Button>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* Case Studies Section */}
             <section className="case-studies-section">
                 <div className="section-container">
@@ -268,6 +193,52 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* Contact Form Section (Replaces Pricing) */}
+            <section className="contact-section" id="contact">
+                <div className="section-container">
+                    <div className="contact-wrapper">
+                        <div className="contact-info">
+                            <span className="section-subtitle">Get Started</span>
+                            <h2>Let's discuss your AI journey</h2>
+                            <p>Join our strategic AI clinic or have an informal chat over coffee. No jargon, no pressure, just practical advice.</p>
+                            <ul className="contact-benefits">
+                                <li><FaCheckCircle /> Free Initial Consultation</li>
+                                <li><FaCheckCircle /> Tailored Roadmap Discussion</li>
+                                <li><FaCheckCircle /> ROI Potential Assessment</li>
+                            </ul>
+                        </div>
+                        <div className="contact-form-container">
+                            <form className="contact-form">
+                                <div className="form-group">
+                                    <label htmlFor="name">Full Name</label>
+                                    <input type="text" id="name" placeholder="John Doe" />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="email">Work Email</label>
+                                    <input type="email" id="email" placeholder="john@company.com" />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="company">Company Name</label>
+                                    <input type="text" id="company" placeholder="Acme Corp" />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="challenge">Primary Challenge</label>
+                                    <select id="challenge">
+                                        <option value="">Select a challenge...</option>
+                                        <option value="strategy">AI Strategy & Roadmap</option>
+                                        <option value="tools">Tool Selection</option>
+                                        <option value="implementation">Implementation Support</option>
+                                        <option value="training">Team Training</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <Button variant="primary" style={{ width: '100%' }}>Book Consultation</Button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* About Section */}
             <section className="about-section">
                 <div className="section-container">
@@ -276,15 +247,6 @@ const Home = () => {
                         <p>Founded in London, 2022, we are strategic growth advisers focused on Strategic AI Innovation (ROI). We support B2B companies ranging from SME to Enterprise across sectors like Financial Services, Manufacturing, and Professional Services.</p>
                         <Button variant="outline">Meet the Team</Button>
                     </div>
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="cta-section">
-                <div className="cta-content">
-                    <h2>Ready to lead your industry?</h2>
-                    <p>Join our strategic AI clinic or have an informal chat over coffee about your AI journey.</p>
-                    <Button variant="primary">Get in Touch</Button>
                 </div>
             </section>
         </div>

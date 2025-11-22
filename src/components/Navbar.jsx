@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaMoon, FaSun } from 'react-icons/fa';
+import Button from './Button';
 import './Navbar.css';
 
 const Navbar = () => {
     const [click, setClick] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [theme, setTheme] = useState('light');
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
+            if (window.scrollY > 20) {
                 setScrolled(true);
             } else {
                 setScrolled(false);
@@ -24,16 +25,25 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Theme Toggle Logic
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        setTheme(savedTheme);
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    }, []);
+
+    const toggleTheme = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    };
+
     return (
-        <motion.nav
-            className={`navbar ${scrolled ? 'scrolled' : ''}`}
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.5 }}
-        >
+        <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="navbar-container">
                 <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-                    <img src="/assets/LBL_Logo_Light.png" alt="LBL Logo" className="logo-image" />
+                    <span style={{ fontWeight: 800, fontSize: '1.5rem', letterSpacing: '-1px', color: 'var(--color-accent)' }}>LBL</span>
                 </Link>
 
                 <div className="menu-icon" onClick={handleClick}>
@@ -42,20 +52,40 @@ const Navbar = () => {
 
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                     <li className="nav-item">
-                        <Link to="/" className="nav-links" onClick={closeMobileMenu}>Home</Link>
+                        <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                            Home
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/about" className="nav-links" onClick={closeMobileMenu}>About</Link>
+                        <Link to="/services" className="nav-links" onClick={closeMobileMenu}>
+                            Services
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/services" className="nav-links" onClick={closeMobileMenu}>Services</Link>
+                        <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
+                            About
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/contact" className="nav-links" onClick={closeMobileMenu}>Contact</Link>
+                        <Link to="/contact" className="nav-links" onClick={closeMobileMenu}>
+                            Contact
+                        </Link>
+                    </li>
+                    <li className="nav-item mobile-only">
+                        <Button variant="primary" onClick={closeMobileMenu}>Get Started</Button>
                     </li>
                 </ul>
+
+                <div className="nav-actions">
+                    <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme">
+                        {theme === 'light' ? <FaMoon /> : <FaSun />}
+                    </button>
+                    <div className="desktop-only">
+                        <Button variant="primary">Get Started</Button>
+                    </div>
+                </div>
             </div>
-        </motion.nav>
+        </nav>
     );
 };
 
