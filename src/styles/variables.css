@@ -1,8 +1,30 @@
 :root {
-  /* Base Colors - Shared */
-  --color-brand-blue: #0051ff;
-  --color-brand-cyan: #00f2ff;
-  --color-brand-dark: #0a192f;
+  /* Brand Colors - Core */
+  --color-brand-charcoal: #28283b;
+  /* Main Charcoal */
+  --color-brand-charcoal-light: #bebec4;
+  /* Light Charcoal */
+  --color-brand-blue: #0d13a9;
+  /* Core Accent Blue */
+
+  /* Brand Colors - Supporting Accents */
+  --color-accent-blue-1: #173fdf;
+  --color-accent-blue-2: #1156eb;
+  --color-accent-green: #5aac4f;
+  --color-accent-cyan: #61eaf2;
+  --color-accent-mint: #98f2e3;
+
+  /* Brand Colors - Charcoal Tints */
+  --color-charcoal-90: #3d3d4f;
+  --color-charcoal-80: #535362;
+  --color-charcoal-70: #696976;
+  --color-charcoal-60: #7e7e89;
+  --color-charcoal-50: #93939d;
+  --color-charcoal-40: #a9a9b1;
+  --color-charcoal-30: #bebec4;
+  --color-charcoal-20: #d4d4d8;
+  --color-charcoal-10: #eaeaeb;
+  --color-charcoal-05: #f4f4f5;
 
   /* Typography */
   --font-family-sans: 'Inter', sans-serif;
@@ -30,54 +52,55 @@
 /* Light Mode (Default) */
 :root {
   --color-background: #ffffff;
-  --color-surface: #f8f9fa;
-  --color-surface-hover: #f1f3f5;
+  --color-surface: var(--color-charcoal-05);
+  /* Very light grey */
+  --color-surface-hover: var(--color-charcoal-10);
 
-  --color-text: #1a1a1a;
-  --color-text-muted: #555555;
-  --color-text-light: #888888;
+  --color-text: var(--color-brand-charcoal);
+  --color-text-muted: var(--color-charcoal-70);
+  --color-text-light: var(--color-charcoal-50);
 
-  --color-border: #e9ecef;
-  --color-border-hover: #dee2e6;
+  --color-border: var(--color-charcoal-20);
+  --color-border-hover: var(--color-charcoal-30);
 
-  --color-primary: #0044cc;
-  /* Slightly darker blue for light mode contrast */
-  --color-primary-hover: #003399;
+  --color-primary: var(--color-brand-blue);
+  --color-primary-hover: var(--color-accent-blue-1);
 
-  --color-accent: #1a1a1a;
-  /* Dark text as accent */
+  --color-accent: var(--color-brand-charcoal);
 
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-border: 1px solid rgba(0, 0, 0, 0.05);
-  --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-border: 1px solid rgba(40, 40, 59, 0.05);
+  --glass-shadow: 0 4px 20px rgba(40, 40, 59, 0.05);
 
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.12);
+  --shadow-sm: 0 2px 4px rgba(40, 40, 59, 0.05);
+  --shadow-md: 0 4px 12px rgba(40, 40, 59, 0.08);
+  --shadow-lg: 0 12px 24px rgba(40, 40, 59, 0.12);
 
-  --gradient-hero: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  --gradient-blue: linear-gradient(135deg, #0044cc 0%, #0066ff 100%);
+  --gradient-hero: linear-gradient(135deg, #ffffff 0%, var(--color-charcoal-05) 100%);
+  --gradient-blue: linear-gradient(135deg, var(--color-brand-blue) 0%, var(--color-accent-blue-1) 100%);
 }
 
 /* Dark Mode */
 [data-theme='dark'] {
-  --color-background: #0a0a0a;
-  --color-surface: #141414;
-  --color-surface-hover: #1f1f1f;
+  --color-background: var(--color-brand-charcoal);
+  /* Main Brand Charcoal */
+  --color-surface: var(--color-charcoal-90);
+  --color-surface-hover: var(--color-charcoal-80);
 
-  --color-text: #f0f0f0;
-  --color-text-muted: #a0a0a0;
-  --color-text-light: #666666;
+  --color-text: #ffffff;
+  --color-text-muted: var(--color-charcoal-20);
+  --color-text-light: var(--color-charcoal-40);
 
-  --color-border: #2a2a2a;
-  --color-border-hover: #404040;
+  --color-border: var(--color-charcoal-80);
+  --color-border-hover: var(--color-charcoal-70);
 
-  --color-primary: #0051ff;
-  --color-primary-hover: #3385ff;
+  --color-primary: var(--color-accent-blue-2);
+  /* Brighter blue for dark mode */
+  --color-primary-hover: var(--color-accent-blue-1);
 
   --color-accent: #ffffff;
 
-  --glass-bg: rgba(20, 20, 20, 0.85);
+  --glass-bg: rgba(40, 40, 59, 0.9);
   --glass-border: 1px solid rgba(255, 255, 255, 0.08);
   --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 
@@ -85,6 +108,6 @@
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.4);
 
-  --gradient-hero: linear-gradient(135deg, #0a0a0a 0%, #141414 100%);
-  --gradient-blue: linear-gradient(135deg, #0051ff 0%, #00f2ff 100%);
+  --gradient-hero: linear-gradient(135deg, var(--color-brand-charcoal) 0%, var(--color-charcoal-90) 100%);
+  --gradient-blue: linear-gradient(135deg, var(--color-accent-blue-2) 0%, var(--color-accent-cyan) 100%);
 }

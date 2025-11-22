@@ -50,21 +50,6 @@ const Home = () => {
                         <span className="text-gradient">lead in the AI era</span>
                     </motion.h1>
 
-                    <motion.p variants={itemVariants}>
-                        The future is not an option, it's an obligation. We guide companies on their AI journey
-                        with a structured, results-driven approach.
-                    </motion.p>
-
-                    <motion.div className="hero-btns" variants={itemVariants}>
-                        <Button variant="primary">Start Your Journey</Button>
-                        <Button variant="outline">Read Manifesto</Button>
-                    </motion.div>
-                </motion.div>
-            </section>
-
-            {/* The Reality Gap Section */}
-            <section className="reality-section">
-                <div className="section-container">
                     <div className="section-header">
                         <span className="section-subtitle">The Challenge</span>
                         <h2>The Reality Gap</h2>

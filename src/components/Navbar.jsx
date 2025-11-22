@@ -66,27 +66,4 @@ const Navbar = () => {
                             About
                         </Link>
                     </li>
-                    <li className="nav-item">
-                        <Link to="/contact" className="nav-links" onClick={closeMobileMenu}>
-                            Contact
-                        </Link>
-                    </li>
-                    <li className="nav-item mobile-only">
-                        <Button variant="primary" onClick={closeMobileMenu}>Get Started</Button>
-                    </li>
-                </ul>
-
-                <div className="nav-actions">
-                    <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme">
-                        {theme === 'light' ? <FaMoon /> : <FaSun />}
-                    </button>
-                    <div className="desktop-only">
-                        <Button variant="primary">Get Started</Button>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    );
-};
-
-export default Navbar;
+                    export default Navbar;
