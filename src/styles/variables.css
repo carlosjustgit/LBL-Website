@@ -1,0 +1,31 @@
+:root {
+  /* Colors */
+  --color-primary: #28283b;
+  --color-primary-light: #3a3a55;
+  --color-secondary: #ffffff;
+  --color-accent: #D4AF37; /* Gold */
+  --color-background: #f8f9fa;
+  --color-text: #333333;
+  --color-text-light: #666666;
+
+  /* Typography */
+  --font-family-sans: 'Outfit', sans-serif;
+  --font-family-serif: 'Playfair Display', serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+}
