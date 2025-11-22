@@ -66,4 +66,27 @@ const Navbar = () => {
                             About
                         </Link>
                     </li>
-                    export default Navbar;
+                    <li className="nav-item">
+                        <Link to="/contact" className="nav-links" onClick={closeMobileMenu}>
+                            Contact
+                        </Link>
+                    </li>
+                    <li className="nav-item mobile-only">
+                        <Button variant="primary" onClick={() => { closeMobileMenu(); document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); }}>Get Started</Button>
+                    </li>
+                </ul>
+
+                <div className="nav-actions">
+                    <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme">
+                        {theme === 'light' ? <FaMoon /> : <FaSun />}
+                    </button>
+                    <div className="desktop-only">
+                        <Button variant="primary" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Get Started</Button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    );
+};
+
+export default Navbar;
