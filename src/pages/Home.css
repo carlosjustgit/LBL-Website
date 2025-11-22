@@ -1,6 +1,6 @@
 .home-container {
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; Removed to prevent cutting off content */
 }
 
 /* Common Section Styles */
@@ -44,8 +44,8 @@
 
 /* Hero Section */
 .hero-section {
-    height: 100vh;
-    min-height: 700px;
+    min-height: 100vh;
+    /* Changed from height: 100vh to allow expansion */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -53,6 +53,10 @@
     position: relative;
     background: var(--color-background);
     overflow: hidden;
+    padding-top: 80px;
+    /* Add padding for fixed navbar */
+    padding-bottom: 4rem;
+    /* Add bottom padding for safety */
 }
 
 /* Premium Background Effects */
@@ -492,7 +496,21 @@
     line-height: 1.8;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1024px) {
+
+    .stats-grid,
+    .approach-grid,
+    .framework-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
 
     .stats-grid,
     .approach-grid,
@@ -515,6 +533,10 @@
     }
 
     .hero-content h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
     }
 }
