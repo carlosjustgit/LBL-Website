@@ -75,7 +75,7 @@ const Home = () => {
                         <FaExclamationTriangle className="warning-icon" />
                         <p><strong>Result:</strong> Confusion, noise, and FOMO dominate the landscape, making strategic decisions increasingly difficult.</p>
                     </div>
-                </div>
+                </motion.div>
             </section>
 
             {/* Our Approach Section */}
