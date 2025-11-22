@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaMapMarkerAlt, FaLinkedin } from 'react-icons/fa';
 import Button from '../components/Button';
@@ -7,6 +8,10 @@ import './Contact.css';
 const Contact = () => {
     return (
         <div className="contact-page-container">
+            <Helmet>
+                <title>Contact | LBL AI Consultancy</title>
+                <meta name="description" content="Ready to start your AI journey? Get in touch with LBL for a strategic consultation. Based in London, serving the UK." />
+            </Helmet>
             <div className="contact-bg-pattern"></div>
 
             <section className="contact-hero">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { FaSearch, FaMapMarkedAlt, FaLayerGroup, FaRoute, FaCogs, FaRocket, FaCheckCircle } from 'react-icons/fa';
 import Button from '../components/Button';
@@ -61,6 +62,10 @@ const Services = () => {
 
     return (
         <div className="services-container">
+            <Helmet>
+                <title>Services | LBL AI Adoption Framework</title>
+                <meta name="description" content="Our 6-Step AI Adoption Framework guides you from discovery to continuous optimisation. Strategic AI implementation for UK businesses." />
+            </Helmet>
             <div className="services-bg-pattern"></div>
 
             {/* Hero Section */}

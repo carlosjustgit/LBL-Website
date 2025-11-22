@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { FaRocket, FaChartLine, FaArrowRight, FaExclamationTriangle, FaLightbulb, FaHandshake, FaCheckCircle, FaCogs, FaSearch, FaMapMarkedAlt, FaLayerGroup } from 'react-icons/fa';
 import Button from '../components/Button';
@@ -31,6 +32,10 @@ const Home = () => {
 
     return (
         <div className="home-container">
+            <Helmet>
+                <title>LBL | Strategic AI Growth Advisors</title>
+                <meta name="description" content="Empowering businesses to lead in the AI era. LBL provides strategic guidance, process mapping, and implementation support for AI adoption." />
+            </Helmet>
             {/* Hero Section */}
             <section className="hero-section">
                 <div className="hero-bg-pattern"></div>

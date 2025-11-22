@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { FaQuoteLeft, FaLinkedin } from 'react-icons/fa';
 import Button from '../components/Button';
@@ -22,6 +23,10 @@ const About = () => {
 
     return (
         <div className="about-container">
+            <Helmet>
+                <title>About Us | LBL Strategic Consultancy</title>
+                <meta name="description" content="Bridging the gap between human ambition and AI potential. LBL is a London-based consultancy empowering courageous leadership." />
+            </Helmet>
             <div className="about-bg-pattern"></div>
 
             {/* Hero Section */}
